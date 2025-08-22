@@ -1,6 +1,6 @@
 def on_button_pressed_a():
     global age
-    age += max(0, -1)
+    age = max(0, age-1)
     display_age(age)
 
 def on_button_pressed_b():
@@ -11,7 +11,8 @@ def on_button_pressed_b():
 def display_age(age):
     basic.clear_screen()
     # Decenies
-    for i in range(0, (age/10)):
+    for i in range(0, int(age/10)):
+        print("i="+str(i))
         led.plot(i%5, i/5)
     # Annees
     for i in range(0, (age%10)):
@@ -21,5 +22,5 @@ def display_age(age):
 input.on_button_pressed(Button.A, on_button_pressed_a)
 input.on_button_pressed(Button.B, on_button_pressed_b)
 
-age = 60
+age = 15
 display_age(age)

@@ -2,7 +2,8 @@ function display_age(age: number) {
     let i: number;
     basic.clearScreen()
     //  Decenies
-    for (i = 0; i < age / 10; i++) {
+    for (i = 0; i < Math.trunc(age / 10); i++) {
+        console.log("i=" + ("" + i))
         led.plot(i % 5, i / 5)
     }
     //  Annees
@@ -13,7 +14,7 @@ function display_age(age: number) {
 
 input.onButtonPressed(Button.A, function on_button_pressed_a() {
     
-    age += Math.max(0, -1)
+    age = Math.max(0, age - 1)
     display_age(age)
 })
 input.onButtonPressed(Button.B, function on_button_pressed_b() {
@@ -21,5 +22,5 @@ input.onButtonPressed(Button.B, function on_button_pressed_b() {
     age = Math.min(age + 1, 99)
     display_age(age)
 })
-let age = 60
+let age = 15
 display_age(age)
