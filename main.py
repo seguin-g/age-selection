@@ -12,7 +12,6 @@ def display_age(age):
     basic.clear_screen()
     # Decenies
     for i in range(0, int(age/10)):
-        print("i="+str(i))
         led.plot(i%5, i/5)
     # Annees
     for i in range(0, (age%10)):

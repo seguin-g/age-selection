@@ -3,7 +3,6 @@ function display_age(age: number) {
     basic.clearScreen()
     //  Decenies
     for (i = 0; i < Math.trunc(age / 10); i++) {
-        console.log("i=" + ("" + i))
         led.plot(i % 5, i / 5)
     }
     //  Annees
